@@ -1,0 +1,95 @@
+1. Install JSON Server
+
+Open terminal in your project folder and run:
+
+npm install -g json-server
+
+or (local install)
+
+npm install json-server
+2. Create db.json
+
+Create a file named db.json in your project root and add this:
+
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Rahul",
+      "role": "Developer",
+      "salary": 50000
+    },
+    {
+      "id": 2,
+      "name": "Sneha",
+      "role": "Tester",
+      "salary": 40000
+    },
+    {
+      "id": 3,
+      "name": "Amit",
+      "role": "Manager",
+      "salary": 70000
+    }
+  ]
+}
+3. Start Server on Port 8080
+
+Run:
+
+json-server --watch db.json --port 8080
+
+Your API will run at:
+
+http://localhost:8080/employees
+4. Available CRUD APIs
+Get All Employees
+GET http://localhost:8080/employees
+Get Employee By ID
+GET http://localhost:8080/employees/1
+Add Employee
+POST http://localhost:8080/employees
+
+Body:
+
+{
+  "name": "Tejas",
+  "role": "Full Stack Developer",
+  "salary": 60000
+}
+Update Employee
+PUT http://localhost:8080/employees/1
+Delete Employee
+DELETE http://localhost:8080/employees/1
+5. React Example (API Call)
+
+Install axios:
+
+npm install axios
+
+Example to fetch data:
+
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+function App() {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:8080/employees")
+      .then(res => setEmployees(res.data));
+  }, []);
+
+  return (
+    <div>
+      <h2>Employees</h2>
+      {employees.map(emp => (
+        <p key={emp.id}>
+          {emp.name} - {emp.role} - {emp.salary}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+export default App;
