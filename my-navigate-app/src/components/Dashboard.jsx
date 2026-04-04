@@ -11,8 +11,8 @@ const Dashboard = () => {
     <div>
       <h2>Welcome {data?.uname} to Dashboard...</h2>
 
-      <h3>username = {data?.uname}</h3> 
-      <h3>password = {data?.pass}</h3> 
+      <h4>username = {data?.uname}</h4> 
+      <h4>password = {data?.pass}</h4> 
     </div>
   )
 }

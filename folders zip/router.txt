@@ -1,0 +1,44 @@
+React :
+
+1) create a react app
+2) JSX 
+3) components [ class , functional ]
+4) state [ dynamic ]
+5) Hooks : useState , useEffect 
+6) Props : arguments of component [ parent to child , child to parent]
+
+[stateful vs stateless components]
+
+7) conditional rendering
+8) axios : api calling
+9) resolving the promises
+
+-------------------------------------------------------------------
+
+   today's agenda : 
+
+   routing in react
+
+    adding burl to our pages to navigate
+
+1) create app
+2) npm install react-router-dom
+3) create navbar and use { Link }  react-router-dom to provide url
+4) App.jsx Routes - Route
+5) wrap App.jsx in <BrowserRouter> in main.jsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
