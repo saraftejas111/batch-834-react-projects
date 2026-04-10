@@ -12,7 +12,9 @@ const Login = () => {
 
         //  navigate("/dash" , {state :{uname : username }})
 
-        localStorage.setItem("uname", username)
+        let userData = {un : username , pass : password }
+
+        localStorage.setItem("user" , JSON.stringify(userData))
 
         navigate('/dash')
 

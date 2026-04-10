@@ -1,15 +1,15 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 
-const ProtectedRoute = ({children}) => {
+const ProtectedRoute = () => {
 
-    const name = localStorage.getItem("uname")
-
- if (name != "tejas"){
+      const userAccept = JSON.parse(localStorage.getItem('user'))
+      
+ if (userAccept.un !== "tejas"){
     return <Navigate to='/loginpage'></Navigate>
  }
 
- return children ; 
+ return <Outlet/>;
 }
 
 export default ProtectedRoute
