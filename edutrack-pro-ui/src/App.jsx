@@ -17,6 +17,8 @@ import ViewAttendance from "./ViewAttendance";
 import Welcome from "./Welcome";
 
 function App() {
+
+  console.log(import.meta.env.VITE_API_URL)
   return (
     <>
       <Routes>
